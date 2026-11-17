@@ -1,0 +1,6 @@
+main
+hello
+*.out
+*.o
+output.txt
+.DS_Store
