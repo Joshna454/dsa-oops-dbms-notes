@@ -350,3 +350,4 @@ An **invariant** is a statement that stays true at a defined point through every
 
 > [!IMPORTANT]
 > **Reproduce → Predict → Trace → Find first divergence → Explain cause → Make focused fix → Retest**
+

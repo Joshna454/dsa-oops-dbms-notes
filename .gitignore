@@ -4,3 +4,5 @@ hello
 *.o
 output.txt
 .DS_Store
+input.txt
+input.txt

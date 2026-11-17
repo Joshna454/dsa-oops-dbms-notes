@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "g++-16",
+            "args": ["-std=c++17", "-o", "main", "${file}"],
+            "group": { "kind": "build", "isDefault": false }
+        },
+        {
+            "label": "compile and run",
+            "type": "shell",
+            "command": "g++-16 -std=c++17 -o main \"${file}\" && ./main < input.txt > output.txt",
+            "group": { "kind": "build", "isDefault": true }
+        }
+    ]
+}
