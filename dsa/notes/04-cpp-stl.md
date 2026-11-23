@@ -50,13 +50,6 @@ It is called "template" because one definition works for any type: `vector<int>`
 ### Headers
 Each part lives in a header, for example `<vector>`, `<algorithm>`, `<map>`. With `g++-16`, `#include <bits/stdc++.h>` includes everything. With Apple's default compiler, include each header you use.
 
-### First program
-
-```cpp
-// Problem: First look at vector, sort, iterators and pair
-// Approach: add values, sort, print with an iterator, find the max, reverse
-
-
 ### Common mistakes
 - Treating `end()` as the last element. It is one position after it.
 - Using an iterator after the container changed size, because it may no longer be valid.
@@ -74,3 +67,81 @@ Each part lives in a header, for example `<vector>`, `<algorithm>`, `<map>`. Wit
 | Algorithm | A ready-made function that works on a range of items |
 | Iterator | An object that points to an element and moves through a container |
 | Template | Code written once that works for any data type |
+
+
+### vector
+
+A resizable array. Items are stored in order, with indexes from 0.
+
+| Method | What it does | Time |
+|--------|--------------|------|
+| `push_back(x)` | add at the end | O(1) on average |
+| `size()` | number of elements | O(1) |
+| `v[i]`, `at(i)` | element at index `i` | O(1) |
+| `front()`, `back()` | first and last element | O(1) |
+| `insert(pos, x)` | insert at a position | O(n) |
+| `erase(pos)`, `erase(first, last)` | remove one element, or a range | O(n) |
+| `swap(w)` | swap with another vector | O(1) |
+| `clear()` | remove everything | O(n) |
+
+Looping: index loop, iterator (`begin()` to `end()`), or for-each (`for (int x : v)`).
+
+- `end()` points **one past** the last element.
+- In `erase(first, last)`, `last` is not removed.
+
+> [!IMPORTANT]
+> **Inserting or erasing anywhere except the end is O(n).**
+
+### list
+
+Lists are sequence containers that support non-contiguous memory allocation. Unlike vectors, which offer faster traversal, lists have slower traversal times. However, they excel in insertion and deletion operations, which are performed in constant time once the desired position is identified. A list in C++ STL is a doubly-linked list, which allows elements to be efficiently inserted or deleted from both ends as well as from the middle. Unlike arrays or vectors, lists do not provide fast random access but are highly efficient in insertion and deletion operations.
+
+| Method | What it does | Time |
+|--------|--------------|------|
+| `push_back(x)`, `push_front(x)` | add at the end or the front | O(1) |
+| `pop_back()`, `pop_front()` | remove from the end or the front | O(1) |
+| `front()`, `back()` | first and last element | O(1) |
+
+
+### deque
+
+A double-ended queue. Add and remove at both ends in O(1), and access by index like a vector.
+
+
+### stack
+
+LIFO: Last In, First Out. Only the top element can be accessed.
+
+| Method | What it does | Time |
+|--------|--------------|------|
+| `push(x)`, `emplace(x)` | add on top | O(1) |
+| `pop()` | remove the top element (returns nothing) | O(1) |
+| `top()` | read the top element | O(1) |
+| `size()`, `empty()` | count, whether it is empty | O(1) |
+| `swap(w)` | swap with another stack | O(1) |
+
+- No index access and no iterators.
+- Check `empty()` before `top()` or `pop()`.
+- Uses: undo operations, matching brackets, reversing, function calls.
+
+> [!IMPORTANT]
+> **Last in, first out. The most recently added item leaves first.**
+
+### queue
+
+FIFO: First In, First Out. Add at the back, remove from the front.
+
+| Method | What it does | Time |
+|--------|--------------|------|
+| `push(x)`, `emplace(x)` | add at the back | O(1) |
+| `pop()` | remove the front element (returns nothing) | O(1) |
+| `front()`, `back()` | read the first and last element | O(1) |
+| `size()`, `empty()` | count, whether it is empty | O(1) |
+| `swap(w)` | swap with another queue | O(1) |
+
+- No index access and no iterators.
+- Check `empty()` before `front()`, `back()`, or `pop()`.
+- Uses: waiting lines, scheduling tasks, level-by-level traversal of trees and graphs.
+
+> [!IMPORTANT]
+> **First in, first out. The oldest item leaves first.**
