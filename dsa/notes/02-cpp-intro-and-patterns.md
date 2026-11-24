@@ -71,13 +71,13 @@ touch input.txt output.txt
 - Error messages name the problem. Read them before searching for a fix.
 - Different computers and compilers behave differently, so notes about your setup save time later.
 
-//data-type
-//input/output
-//if else, nested if else
-//Switch case
-//for loop
-//while loop
-//Arrays
-//Strings
-//functions
-//pass by value and reference
+//data-type  
+//input/output  
+//if else, nested if else  
+//Switch case  
+//for loop  
+//while loop  
+//Arrays  
+//Strings  
+//functions  
+//pass by value and reference 
